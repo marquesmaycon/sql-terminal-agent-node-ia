@@ -1,0 +1,30 @@
+# Dependências
+node_modules/
+
+# Variáveis de ambiente
+.env
+.env.*
+!.env.example
+
+# Build
+dist/
+build/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Bancos de dados locais
+*.db
+*.sqlite
+*.sqlite3
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/*
+!.vscode/settings.json
+.idea/
