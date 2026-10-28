@@ -1,4 +1,5 @@
 export type User = {
+  id: string
   ip: string
   username: string
   first_name: string
@@ -8,5 +9,4 @@ export type User = {
   job_area: string
   company: string
   job_title: string
-  id: string
 }

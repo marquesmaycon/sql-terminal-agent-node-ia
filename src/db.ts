@@ -6,6 +6,7 @@ export function createDb(path = ":memory:") {
   db.exec(`
     CREATE TABLE IF NOT EXISTS access_logs (
       id TEXT PRIMARY KEY,
+      user_id TEXT NOT NULL,
       ip TEXT NOT NULL,
       username TEXT NOT NULL,
       first_name TEXT NOT NULL,
@@ -21,5 +22,3 @@ export function createDb(path = ":memory:") {
 
   return db
 }
-
-const db = createDb("access_logs.db")
