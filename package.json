@@ -4,7 +4,9 @@
   "scripts": {
     "seed": "node src/seed.ts",
     "ingest": "node src/ingest.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --env-file=.env src/index.ts",
+    "dev": "node --env-file=.env --watch src/index.ts"
   },
   "license": "ISC",
   "type": "module",

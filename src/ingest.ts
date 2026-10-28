@@ -1,9 +1,9 @@
 import { createReadStream } from "node:fs"
-import { LOG_FILE, LOG_INTERVAL } from "./config.ts"
+import { DB_NAME, LOG_FILE, LOG_INTERVAL } from "./config.ts"
 import { createInterface } from "node:readline"
 import { createDb } from "./db.ts"
 
-const db = createDb("access_logs.db")
+const db = createDb(DB_NAME)
 const fileStream = createReadStream(LOG_FILE)
 const rl = createInterface({
   input: fileStream,
