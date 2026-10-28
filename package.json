@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "seed": "node src/seed.ts",
+    "ingest": "node src/ingest.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "license": "ISC",
