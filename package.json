@@ -2,16 +2,16 @@
   "name": "sql-terminal-agent",
   "version": "1.0.0",
   "scripts": {
-    "seed": "node src/seed.ts",
-    "ingest": "node src/ingest.ts",
+    "seed": "node --disable-warning=ExperimentalWarning src/seed.ts",
+    "ingest": "node --disable-warning=ExperimentalWarning src/ingest.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node --env-file=.env src/index.ts",
-    "dev": "node --env-file=.env --watch src/index.ts"
+    "start": "node --env-file=.env --disable-warning=ExperimentalWarning src/index.ts",
+    "dev": "node --env-file=.env --disable-warning=ExperimentalWarning --watch src/index.ts"
   },
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "@ai-sdk/openai": "^4.0.104",
+    "@ai-sdk/google": "^4.0.107",
     "@faker-js/faker": "^10.6.0",
     "ai": "^7.0.149",
     "zod": "^4.6.7"

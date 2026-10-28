@@ -1,6 +1,6 @@
-import { openai } from "@ai-sdk/openai"
+import { google } from "@ai-sdk/google"
 import { generateText, Output } from "ai"
-import { OPENAI_MODEL } from "./config.ts"
+import { GEMINI_MODEL } from "./config.ts"
 import { buildSystemPrompt, buildUserPrompt } from "./prompts.ts"
 import { sqlSuggestionSchema } from "./schemas.ts"
 import { validateSql } from "./sql/validate.ts"
@@ -8,7 +8,7 @@ import type { SQLOutputValue } from "node:sqlite"
 
 export async function generateSqlObject(question: string) {
   const { output } = await generateText({
-    model: openai(OPENAI_MODEL),
+    model: google(GEMINI_MODEL),
     output: Output.object({ schema: sqlSuggestionSchema }),
     system: buildSystemPrompt(),
     prompt: buildUserPrompt(question)
@@ -34,7 +34,7 @@ export async function generateAnswer({
   rows: Record<string, SQLOutputValue>[]
 }) {
   const { text } = await generateText({
-    model: openai(OPENAI_MODEL),
+    model: google(GEMINI_MODEL),
     system: `
       Responda em português, de forma objetiva, apenas com base nos dados retornados.
       Se o resultado estiver vazio, diga isso claramente.
