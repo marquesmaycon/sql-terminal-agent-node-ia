@@ -4,9 +4,10 @@
   "scripts": {
     "seed": "node --disable-warning=ExperimentalWarning src/seed.ts",
     "ingest": "node --disable-warning=ExperimentalWarning src/ingest.ts",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node --env-file=.env --disable-warning=ExperimentalWarning src/index.ts",
-    "dev": "node --env-file=.env --disable-warning=ExperimentalWarning --watch src/index.ts"
+    "dev": "node --env-file=.env --disable-warning=ExperimentalWarning --watch src/index.ts",
+    "test": "node --test --experimental-test-module-mocks --disable-warning=ExperimentalWarning ./src/*.spec.ts",
+    "test:watch": "node --test --watch --experimental-test-module-mocks --disable-warning=ExperimentalWarning ./src/*.spec.ts"
   },
   "license": "ISC",
   "type": "module",
