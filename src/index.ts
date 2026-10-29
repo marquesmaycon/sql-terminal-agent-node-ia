@@ -1,8 +1,9 @@
 import { createInterface } from "node:readline"
 import { DB_NAME } from "./config.ts"
-import { createDb } from "./db.ts"
+import { createDb } from "./db/connection.ts"
 import { styleText } from "node:util"
-import { generateAnswer, generateSqlObject } from "./ai.ts"
+import { generateSqlObject } from "./ai/generate-sql.ts"
+import { generateAnswer } from "./ai/generate-answer.ts"
 
 const db = createDb(DB_NAME)
 

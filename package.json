@@ -2,12 +2,12 @@
   "name": "sql-terminal-agent",
   "version": "1.0.0",
   "scripts": {
-    "seed": "node --disable-warning=ExperimentalWarning src/seed.ts",
-    "ingest": "node --disable-warning=ExperimentalWarning src/ingest.ts",
+    "seed": "node --disable-warning=ExperimentalWarning src/scripts/seed.ts",
+    "ingest": "node --disable-warning=ExperimentalWarning src/scripts/ingest.ts",
     "start": "node --env-file=.env --disable-warning=ExperimentalWarning src/index.ts",
     "dev": "node --env-file=.env --disable-warning=ExperimentalWarning --watch src/index.ts",
-    "test": "node --test --experimental-test-module-mocks --disable-warning=ExperimentalWarning ./src/*.spec.ts",
-    "test:watch": "node --test --watch --experimental-test-module-mocks --disable-warning=ExperimentalWarning ./src/*.spec.ts"
+    "test": "node --test --experimental-test-module-mocks --disable-warning=ExperimentalWarning \"src/**/*.spec.ts\"",
+    "test:watch": "node --test --watch --experimental-test-module-mocks --disable-warning=ExperimentalWarning \"src/**/*.spec.ts\""
   },
   "license": "ISC",
   "type": "module",

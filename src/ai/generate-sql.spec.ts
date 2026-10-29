@@ -17,7 +17,7 @@ describe("Testes para a camada de IA", () => {
       }
     })
 
-    const { generateSqlObject } = await import("./ai.ts")
+    const { generateSqlObject } = await import("./generate-sql.ts")
 
     const question = "Quantos acessos existem no total?"
     const { sql, explanation } = await generateSqlObject(question)

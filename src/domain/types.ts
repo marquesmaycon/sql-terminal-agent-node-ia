@@ -10,3 +10,9 @@ export type User = {
   company: string
   job_title: string
 }
+
+export type AccessLog = Omit<User, "id"> & {
+  id: string
+  user_id: string
+  timestamp: string
+}

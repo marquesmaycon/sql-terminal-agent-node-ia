@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker"
-import type { User } from "./types.ts"
+import type { AccessLog, User } from "../domain/types.ts"
 
 export function generateUser(): User {
   return {
@@ -16,7 +16,7 @@ export function generateUser(): User {
   }
 }
 
-export function generateLogEntry(user: User) {
+export function generateLogEntry(user: User): AccessLog {
   const { id: user_id, ...rest } = user
   return {
     id: faker.string.uuid(),

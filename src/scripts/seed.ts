@@ -1,7 +1,7 @@
 import { faker } from "@faker-js/faker"
 import { createWriteStream, statSync } from "node:fs"
-import { LOG_FILE, LOG_INTERVAL } from "./config.ts"
-import { generateLogEntry, generateUser } from "./mocks.ts"
+import { LOG_FILE, LOG_INTERVAL } from "../config.ts"
+import { generateLogEntry, generateUser } from "../mocks/access-logs.ts"
 
 const maxRecords = Number(process.argv[2] || Infinity)
 
